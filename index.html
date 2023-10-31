@@ -30,24 +30,38 @@
             /* background: gray; */
             /* border: 2px solid; */
         }
+
+        #lab {
+            width: 100%;
+            height: 200px;
+            border-radius: 12px;
+            background: #dbdbdb6e;
+            box-shadow: 0 0 10 rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            bottom: 0px;
+        }
     </style>
 </head>
 
 <body>
     <div id="main">
-
-        <div id="content">
-            
-        </div>
+        <div id="content"></div>
     </div>
 
-    <label for="paragraphCount">Enter the number of paragraphs:</label>
-    <input type="number" id="paragraphCount" name="paragraphCount" min="1">
 
-    <label for="wordCount">Enter the number of words per paragraph:</label>
-    <input type="number" id="wordCount" name="wordCount" min="1">
-
-    <button onclick="generateRandomText()">Generate Random Text in SAT olck (Chiki) script</button>
+    <div id="lab">
+        <label for="paragraphCount">Enter the number of paragraphs:</label>
+        <input type="number" id="paragraphCount" name="paragraphCount" min="1">
+        
+        <label for="wordCount">Enter the number of words per paragraph:</label>
+        <input type="number" id="wordCount" name="wordCount" min="1">
+        
+        <button onclick="generateRandomText()">Generate Random Text in SAT olck (Chiki) script</button>
+    </div>
 
     <script src="words.js" defer></script>
     <script>
