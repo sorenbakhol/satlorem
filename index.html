@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Random Text in SAT olck (Chiki) script</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #main {
+            width: 100%;
+            height: 400px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        #content {
+
+            width: 80%;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+            /* Fallback font in case Olchiki font is not available */
+            font-size: 18px;
+            word-spacing: 6px;
+            padding: 20px;
+
+            /* background: gray; */
+            /* border: 2px solid; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+
+        <div id="content">
+            
+        </div>
+    </div>
+
+    <label for="paragraphCount">Enter the number of paragraphs:</label>
+    <input type="number" id="paragraphCount" name="paragraphCount" min="1">
+
+    <label for="wordCount">Enter the number of words per paragraph:</label>
+    <input type="number" id="wordCount" name="wordCount" min="1">
+
+    <button onclick="generateRandomText()">Generate Random Text in SAT olck (Chiki) script</button>
+
+    <script src="words.js" defer></script>
+    <script>
+        function generateRandomText() {
+            var paragraphs = '';
+            var characters = 'ᱚᱛᱜᱝᱞᱟᱠᱡᱢᱣᱤᱥᱦᱧᱨᱩᱪᱫᱬᱭᱮᱯᱰᱱᱲᱳᱴᱵᱶᱷᱸᱹᱺᱻᱼᱽ᱾᱿';
+            var space = ' ';
+            var paragraphCount = parseInt(document.getElementById("paragraphCount").value);
+            var wordCount = parseInt(document.getElementById("wordCount").value);
+
+            for (var p = 0; p < paragraphCount; p++) {
+                var paragraph = '';
+                for (var i = 0; i < wordCount; i++) {
+                    var randomIndex = Math.floor(Math.random() * realWords.length);
+                    paragraph += realWords[randomIndex];
+                    if (Math.random() > 0.5) {
+                        paragraph += space;
+                    }
+                }
+                paragraphs += paragraph + '<br/><br/>';
+            }
+
+            document.getElementById('content').innerHTML = paragraphs;
+        }
+    </script>
+</body>
+
+</html>
